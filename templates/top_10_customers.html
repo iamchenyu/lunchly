@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}Top 10 Customers{% endblock %} {%
+block content %}
+<h1>Lunchly Top 10 Customers</h1>
+<em>Shout out to customers who have made the most reservations so far!</em>
+<div class="mt-3">
+  <ul class="list-group list-group-flush">
+    {% for pair in pairs %}
+    <li class="list-group-item">
+      <a href="/{{pair.customer.id}}">{{pair.customer.fullName}}</a> -
+      {{pair.reservations}} Reservations
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock%}

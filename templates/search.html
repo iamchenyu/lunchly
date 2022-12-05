@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %}Search{% endblock %} {% block content
+%}
+<h1>Search a Customer</h1>
+<input
+  class="form-control form-control-lg"
+  type="text"
+  placeholder="for example: John Doe"
+  id="search-input"
+/>
+<div>
+  <ul class="list-group list-group-flush" id="search-results"></ul>
+</div>
+{% endblock %} {% block js %}
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+  integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/search.js"></script>
+{% endblock%}
