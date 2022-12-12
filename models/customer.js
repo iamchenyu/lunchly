@@ -1,7 +1,6 @@
 /** Customer for Lunchly */
 
 const db = require("../db");
-const Reservation = require("./reservation");
 
 /** Customer of the restaurant. */
 
@@ -78,15 +77,6 @@ class Customer {
     return await Reservation.getReservationsForCustomer(this.id);
   }
 
-  /****************************************************************************/
-  // async getCustomerForReservation(customerId) {
-  //   const result = await db.query(`SELECT * FROM customers WHERE id=$1`, [
-  //     customerId,
-  //   ]);
-  //   return new Customer(result.rows[0]);
-  // }
-  /****************************************************************************/
-
   /** save this customer. (no need to return anything) */
 
   async save() {
@@ -127,3 +117,7 @@ class Customer {
 }
 
 module.exports = Customer;
+
+// To solve the circular dependency:
+// Reference: https://stackoverflow.com/questions/10869276/how-to-deal-with-cyclic-dependencies-in-node-js
+const Reservation = require("./reservation");

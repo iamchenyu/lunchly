@@ -38,9 +38,6 @@ router.post("/add", async function (req, res, next) {
     const notes = req.body.notes;
 
     const customer = new Customer({ firstName, lastName, phone, notes });
-    console.log(customer);
-    console.log(customer.firstName);
-    console.log(customer.validatedFirstName);
 
     await customer.save();
 
@@ -80,10 +77,11 @@ router.post("/search", async (req, res, next) => {
 });
 
 /****************************************************************************/
+// Just for testing if the circular dependency problem is solved
 // router.get("/reservations/:id", async (req, res, next) => {
 //   const reservation = await Reservation.get(req.params.id);
-//   const customer = reservation.getCustomer();
-//   console.log(customer);
+//   const customer = await reservation.getCustomer();
+//   return res.json({ customer });
 // });
 /****************************************************************************/
 

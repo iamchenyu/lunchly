@@ -17,7 +17,7 @@ class Reservation {
   }
 
   get formattedStartAt() {
-    return moment(this._startAt).format("MMMM Do YYYY, h:mm a");
+    return moment(this.startAt).format("MMMM Do YYYY, h:mm a");
   }
 
   /** given a customer id, find their reservations. */
@@ -38,9 +38,9 @@ class Reservation {
   }
 
   /****************************************************************************/
-  // async getCustomer() {
-  //   return await Customer.getCustomerForReservation(this.customerId);
-  // }
+  async getCustomer() {
+    return await Customer.get(this.customerId);
+  }
   /****************************************************************************/
 
   /** Get a single reservation */
