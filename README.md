@@ -9,7 +9,7 @@
   <a href="#how-to-use">How To Use</a>
 </p>
 
-![screenshot](images/Screenshot.png)
+![screenshot](images/screenshot.png)
 
 ## Key Features
 
